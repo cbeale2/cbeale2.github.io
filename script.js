@@ -1,6 +1,6 @@
- // Wait for window load
+
   $(document).load(function() {
-    // Animate loader off screen
+  
     $(".se-pre-con").fadeOut("slow");
     $("#lo").hide();
   });
@@ -11,7 +11,7 @@ var map = L.map('map', {
   zoomControl: false
 });
 
-// Set up the OSM layer
+
 L.tileLayer(
   'http://a.tiles.mapbox.com/v3/devseed.j2afnnal/{z}/{x}/{y}.png', {
     maxZoom: 18
@@ -75,7 +75,7 @@ $.ajax({
 
 
 
-//second ajax requet based on changable sql statment
+//second ajax request based on changable sql statment
 
 $('select').on('change', function() {
  $("#lo").show();
@@ -87,11 +87,11 @@ var markers = L.markerClusterGroup({
   maxClusterRadius: 60,
 });
 
-// $("#loading").show;
+
 
   console.log("added");
   var sql = this.value;
-//  console.log(this.value);
+
   var url = sql;
   $.ajax({
     type: "GET",
@@ -116,7 +116,7 @@ var markers = L.markerClusterGroup({
       map.panTo(e.layer.getLatLng());
     });
       map.addLayer(markers);
-  //    $("#loading").hide();
+  
       $("#zoom").click(function() {
         map.fitBounds(geojsonLayer.getBounds());
         markers.clearLayers();
